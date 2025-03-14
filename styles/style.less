@@ -1,0 +1,409 @@
+@title-color: #F06400;
+@button-color: #704F38;
+@menu-color: #2000F0;
+@secondary-color: #0060F0;
+@icon-color: white;
+@species-color: #9C7933;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    // background-color: #F0A000;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+
+//Header ############################################################
+
+.heading {
+    // border-bottom: 3px solid black;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 900;
+    font-style: italic;
+    // font-size: 3rem;
+    color: @title-color;
+    display: flex;
+    justify-content: center;
+
+    img {
+        height: 60px;
+    }
+    
+    h1 {
+        font-size: 60px;
+
+    }
+
+}
+
+//##################### Navigation Bar and Menu #####################################
+
+
+.hamburger {
+    background-color: @button-color;
+    padding: 10px 0;
+    // border: 2px solid white ;
+}
+
+.hamburger:hover {
+    background-color: @menu-color;
+    // border: 2px solid black;
+}
+
+
+nav {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: @menu-color;
+    width: 30%;
+    height: 20vh;
+    border: 0px;
+    padding: 0px;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    perspective: 1000px;
+    // border: 2px solid black;    
+
+    li{
+        padding: 10px 0;
+        background-color: @menu-color;
+        border-bottom: 2px solid @secondary-color;
+    
+        a{
+            color: @icon-color;
+            text-decoration: none;
+            padding: 20px;
+    
+        }
+    
+    }
+    
+    li:hover {
+        background-color: @secondary-color;
+        
+    }
+    
+    
+}
+
+nav:target {
+    transform: translateX(0);
+    translate: transform 0.5s ease;
+}
+
+#bars-icon {
+    color: @icon-color;
+    padding: 17px 10px;
+    margin-top: 12px;
+}
+
+#bars-icon:hover {
+    background-color: @menu-color;
+}
+
+
+#close-icon {
+    color: black;
+    background-color: @icon-color;
+    padding: 15px 10px;
+    margin-bottom: 2px;
+    border-radius: 25px;
+    // border: 2px solid black;
+}
+
+#close-icon:hover {
+    background-color: @button-color;
+}
+
+
+.menu-links li:hover {
+    background-color: @secondary-color;
+    
+}
+
+
+@media screen and (min-width: 700px) {
+    nav {
+        position: static;
+        height: 60px;
+        transform: translateX(0);
+        width: 100%;
+        // border: none;
+        display: flex;
+    }
+
+    #bars-icon,
+    #close-icon{
+        display: none;
+    }
+
+    nav li {
+        display: inline-block;
+        border: 0;
+        margin: 10px 0 0 10px;
+    }
+
+    // nav  > ul {
+    //     overflow: hidden;
+    // }
+}
+
+////##################### Footer #############################
+
+footer {
+    background-color: @menu-color;
+    // height: 100%;
+    // padding: 3rem;
+    margin-top: auto;
+
+    
+    .links {
+        display: flex;
+        justify-content: space-evenly;
+        // border: 3px solid blue;
+        a{
+            padding: 20px;
+            color: @icon-color;
+            // border: 3px solid blue;
+
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        padding-bottom: 20px;
+        color: @icon-color;
+    }
+}
+
+
+//####################### Landing Page #################### 
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    // flex: 50%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    // border: 2px solid red;
+
+    img {
+        width: 600px;
+        border-radius: 15px;
+        margin: 20px 0;
+        // border: 2px solid green;
+    }
+
+    h3 {
+        width: 600px;
+        // border: 2px solid blue;
+        text-align: center;
+        padding: 0 0 20px;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .content img {
+        width: 80%;
+    }
+    .content h3 {
+        width: 80%;
+    }
+}
+
+
+//##################### History Page ######################
+
+.main-area {
+    display: flex;
+    flex-direction: column;
+    // border-top: 4px solid black;
+    // border-bottom: 4px solid black;
+    // width: 100%;
+    // padding: 10px;
+
+    .revolution {
+        text-align: center;
+        padding: 10px;
+        background-color: @title-color;
+        // border-bottom: 4px solid black;
+    }
+    .centered {
+        // height: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // border: 3px solid #0060F0;
+        padding: 10px;
+        // border-bottom: 3px solid black;
+    }
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+    height: 100%;
+    padding: 5px;
+    // border: 3px solid green;
+  }
+  
+  .flip-card {
+    background: @icon-color;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    background-color: transparent;
+    width: 250px;
+    height: 260px;
+    // border: 2px solid black;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover > .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    // padding-top: 5px;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: @icon-color;
+    color: black;
+    // border: 2px solid blue;
+  }
+  
+  .pixHolder {  
+    background-color: @icon-color;
+
+
+    img{
+        height: 168px;
+        width: 250px;
+      }
+    
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: @secondary-color;
+    color: black;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+
+    ul{
+        list-style-type: none;
+        padding: 0 10px;
+    }
+
+    p {
+        padding: 0 10px;
+    }
+  }
+  
+    
+  
+  .card-content {
+  
+    width: 81.5%;
+    padding: 1.4em;
+    // margin-top: 0;
+    // margin-bottom: 0.5em;
+    font-weight: normal;
+    size: inherit;
+    // border: 2px solid red;
+
+    ul {
+        list-style-type: none;
+      }
+    
+  }
+  
+// SAPIENS #########################################################
+
+.speciesTitle {
+    text-align: center;
+    padding: 10px;
+    background-color: @species-color;
+}
+
+[status="you"] {
+  
+    border: 6px dashed @secondary-color;
+  
+  }
+
+
+// .test {
+//     p {
+//         height: 300px;
+//         width: 200px;
+//     }
+// }
+
+
+
+//FORM #########################################################################
+
+form {
+    background-color: lightgray;
+    padding-top: 20px;
+}
+
+label {
+    margin: 20px 0;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    margin: 0 0 20px 10px;
+    background-color: @button-color;
+    color: @icon-color;
+    font-weight: bold;
+    border: none;
+}
+
+input[type="submit"]:hover {
+    background-color: @menu-color;
+}
+
